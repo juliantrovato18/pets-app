@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+.button{
+    background-color: lightseagreen;
+    padding: 10px;
+    margin-top: 20px;
+    width: 170px;
+}
+.form{
+    min-height: 200px;
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: lightgoldenrodyellow;
+    border: solid 2px black;
+}
+.thanks{
+    min-width: 400px;
+    min-height: 300px;
+    background-color: blanchedalmond;
+    border: solid 1px black;
+}
+.layout{
+    min-width: 375px;
+    min-height: 200px;
+    border: solid 2px black;
+    padding: 10px;
+}
+.card-container{
+    border: solid 1px black;
+    max-width: 695px;
+    max-height: 400px;
+}
+.img{
+    max-width: 200px;
+    max-height: 200px;
+}
+.search-title{
+    margin-bottom: 20px;
+}
