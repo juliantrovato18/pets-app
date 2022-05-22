@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Poppins:ital,wght@0,700;1,300&family=Roboto:ital,wght@1,500&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.root{
+    min-width: 320px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FF6868;
+    padding:  10px;
+}
+.burger{
+    width: 40px;
+    height: 34px;
+}
+.window{
+    background-color: #8AF1FF;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    height: 880px;
+}
+.link{
+    text-decoration: none;
+    
+    text-align: center;
+    font-family:"poppins";
+    font-weight: 700 bold;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+}

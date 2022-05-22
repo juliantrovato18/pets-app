@@ -1,8 +1,0 @@
-.form{
-    display:  flex;
-    flex-direction: column;
-    padding: 10px;
-    box-sizing: border-box;
-    max-width: 500px;
-    min-height: 300px;
-}

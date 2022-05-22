@@ -1,0 +1,9 @@
+.root{
+    display:  flex;
+    max-width: 380px;
+    min-height: 550px;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}

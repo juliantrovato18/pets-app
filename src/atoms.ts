@@ -1,18 +1,21 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
-export const userNameAtom = atom({
-    key: 'textState', // unique ID (with respect to other atoms/selectors)
-    default: 'julito', // default value (aka initial value)
+
+export const tokenAtom = atom({
+    key: 'token', // unique ID (with respect to other atoms/selectors)
+    default: '', // default value (aka initial value)
   });
 
- export const userId = selector({
-    key: 'charCountState', // unique ID (with respect to other atoms/selectors)
-    get: async ({get}) => {
-        const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-        const data = await res.json();
-  
-      return data.id;
-    },
-  });
 
+ export const userData = atom({
+    key: 'userData', // unique ID (with respect to other atoms/selectors)
+    default: {userEmail: ''}  // default value (aka initial value)
+    
+  });
   
+
+  export const petAtom = atom({
+    key: 'petAtom', // unique ID (with respect to other atoms/selectors)
+    default: {petName:"", petUbi:"", lat:0, lng:0, image:""}, // default value (aka initial value)
+    
+  });

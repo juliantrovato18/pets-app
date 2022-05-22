@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Poppins:ital,wght@0,700;1,300&family=Roboto:ital,wght@1,500&display=swap');
+
+.green{
+    background-color: #97EA9F;
+    min-Width: 300px;
+    Height: 50px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: "poppins";
+   
+}
+.pink{
+    background-color: #FF9DF5;
+    min-Width: 300px;
+    Height: 50px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: "poppins";
+}
+.gray{
+    background-color: #CDCDCD;
+    min-Width: 300px;
+    Height: 50px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: "poppins";
+}

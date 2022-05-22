@@ -1,0 +1,11 @@
+.cardContainer{
+    width: 331px;
+    height: 147px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+}
+.image2{
+    width: 24px;
+    height: 24px;
+}
