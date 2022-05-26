@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Title } from "Ui/Title";
 import { SigninForm } from "components/SignInForm/SigninForm";
 import css from "./index.css"
-import { useToken, useUserData } from "hooks";
+import { useToken, useUserData, useUserId } from "hooks";
 import { ButtonRosa } from "Ui/Button";
 import { createUser } from "lib/api";
 
@@ -12,6 +12,7 @@ export function MisDatos(){
 
     const [userData, setUserData] =useUserData();
     const [token, setToken] = useToken();
+    const [id, setId] = useUserId();
     const navigate = useNavigate();
     const email = useParams();
     const mail = email.email;
@@ -28,6 +29,8 @@ export function MisDatos(){
             createUser(name, mail, password).then((res)=>{
                 res.json().then((data)=>{
                     console.log(data);
+                    setId(data.user_id)
+                    console.log(id);
                     navigate("/signin")
                 })
                

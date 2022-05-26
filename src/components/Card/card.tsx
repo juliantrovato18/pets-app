@@ -2,12 +2,12 @@ import React from "react";
 import {Title} from "Ui/Title";
 import {SubTitle} from "Ui/Subtitle";
 import css from "./Card.css";
-import "../../img/lapiz.png";
+
 
 type petsProps = {
     img: string;
-    title: string;
-    price: number;
+    name: string;
+    place: string;
     key: any;
 };
 
@@ -16,10 +16,10 @@ function Card(props: petsProps) {
         <div className={css.cardContainer}>
             <img className={css.image} src={props.img} alt="" />
             <div className={css.title}>
-                <Title children="Bobby"/>
+                <Title children={props.name}/>
             </div>
             <div className={css.subtitle}>
-                <SubTitle children="Nuñez" />
+                <SubTitle children={props.place} />
                 <img src="../../img/lapiz.png" className={css.image2} />
             </div>
         </div>

@@ -1,11 +1,27 @@
 .cardContainer{
     width: 331px;
-    height: 147px;
+    height: 234px;
     border: solid 1px black;
     display: flex;
     flex-direction: column;
+    margin-top: 15px;
 }
 .image2{
-    width: 24px;
-    height: 24px;
+    width: 43px;
+    height: 43px;
+    padding: 10px;
+}
+.image{
+    padding: 10px;
+    max-width: 90px;
+    min-width: 100px;
+}
+.subtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.title{
+    padding: 10px;
 }

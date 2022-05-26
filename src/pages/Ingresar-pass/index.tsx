@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useToken, useUserData } from "hooks";
+import { useToken, useUserData, useUserId } from "hooks";
 import {verifyMail, signIn} from "../../lib/api"
 import { ButtonRosa } from "Ui/Button";
 import { InputComp } from "Ui/Input";
@@ -13,11 +13,12 @@ export function PassPage(){
     const [mailExist, setMailExist] = useState(false); 
     const navigate = useNavigate();
     const [token, setToken] = useToken();
+    const [id, setId] = useUserId();
     const [user, setUser] = useUserData();
 
     useEffect(()=>{
         if(token){
-            navigate("/around");
+            navigate("/mypets");
         }
     },[token]) /
     
@@ -26,12 +27,15 @@ export function PassPage(){
     useEffect(()=>{
         verifyMail(mail).then((resp)=>{
             resp.json().then((data)=>{
-                console.log(data, "data para el user");
+                if(data == null){
+                    navigate("/info/"+mail);
+                }else{
+                    console.log(data, "data para el user");
                 setUser({userEmail:data.email})
                 setMailExist(true)
+                }
+                
             })
-            
-           
         })
     },[email])
     console.log(user);
@@ -44,10 +48,11 @@ export function PassPage(){
             signIn(userMail, pass).then((res)=>{
                 res.json().then((data)=>{
                     setToken({token:data.token})
+                    setId({userId:data.userId})
                 })
             })
         }else{
-            console.log("algo salio mal, no iniciaste sesion");
+            console.log("xd");
         }
         
     }

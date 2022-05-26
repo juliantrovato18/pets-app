@@ -45,3 +45,26 @@ export async function verifyMail(email:any){
     }
 }
 
+//pets around
+export async function getPetsAround(lat:number, lng:number){
+    const pets = await fetch(API_BASE_URL+"/mascotas-cerca?lat=" +lat +"&lng="+lng,{
+        method:"GET"
+    })
+    return pets
+}
+
+//my reported pets
+export async function myReportedPets(userId, token){
+    try {
+        const pets = await fetch(API_BASE_URL+"/mypets/"+userId,{
+            method: "GET",
+            headers:{
+                "Authorization": `bearer ${token}`
+            }
+        })
+        return pets
+    } catch (error) {
+        console.log(error);
+    }
+}
+

@@ -12,6 +12,13 @@ export const tokenAtom = atom({
     default: {userEmail: ''}  // default value (aka initial value)
     
   });
+
+
+  export const userId = atom({
+    key: 'userId', // unique ID (with respect to other atoms/selectors)
+    default: {userId: ''}  // default value (aka initial value)
+    
+  });
   
 
   export const petAtom = atom({

@@ -5,8 +5,9 @@ import { Layout } from "components/Layout/layout";
 import { SigninPage } from "pages/Signin-page";
 import { SigninForm } from "components/SignInForm/SigninForm";
 import { PassPage } from "pages/Ingresar-pass";
-import {MisDatos} from "pages/Mis-datos/index"
-import {PetsAroundPage} from "pages/pets-around/index"
+import {MisDatos} from "pages/Mis-datos/index";
+import {ReportedPetsPage} from "pages/my-reported-pets/index";
+
 
 
 
@@ -20,7 +21,7 @@ function AppRoutes() {
                 <Route path="/signin/:email" element={<PassPage />} />
                 <Route path="/pass" element={<PassPage />} />
                 <Route path="/info/:email" element={<MisDatos />} />
-                <Route path="/around" element={<PetsAroundPage />} />
+                <Route path="/mypets" element={<ReportedPetsPage />} />
             </Route>
         </Routes>
     );

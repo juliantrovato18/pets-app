@@ -10,16 +10,27 @@ import { LoginForm } from "components/Login-Form/Login-Form";
 
 export function SigninPage(){
     const navigate = useNavigate();
+    const [verify, setVerify] = useState(false);
+
     
     //probar directamente en el passs
-     function submitHandler(e){
+    async function submitHandler(e){
         e.preventDefault();
         const mail = e.target.email.value;
         navigate(mail);
+        // if(verify){
+        //     console.log(verify);
+        //     console.log("entra al navigate mail");
+        //     navigate(mail);
+        // }else{
+        //     console.log("entra al info")
+        //     navigate("/info/"+mail)
+        // }
 
         
         
     }
+    
 
     return (
         <div className={css.root}>
