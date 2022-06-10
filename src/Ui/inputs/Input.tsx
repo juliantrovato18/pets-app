@@ -4,7 +4,8 @@ import css from "./Input.css"
 type input = {
     label:string,
     name:string,
-    type:string
+    type:string,
+
 }
 
 export function InputComp(props:input){
@@ -12,6 +13,6 @@ export function InputComp(props:input){
             <label className={css.label}>
                 <h4>{props.label}</h4>
             </label>
-            <input className={css.input} name={props.name} type={props.type} />
+            <input className={css.input} name={props.name} type={props.type}  />
     </>
 }

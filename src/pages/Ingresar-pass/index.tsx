@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useToken, useUserData, useUserId } from "hooks";
 import {verifyMail, signIn} from "../../lib/api"
-import { ButtonRosa } from "Ui/Button";
-import { InputComp } from "Ui/Input";
-import { Title } from "Ui/Title";
+import { ButtonRosa } from "Ui/buttons/Button";
+import { InputComp } from "Ui/inputs/Input";
+import { Title } from "Ui/titles/Title";
 import css from "./index.css";
 
 export function PassPage(){
@@ -20,7 +20,7 @@ export function PassPage(){
         if(token){
             navigate("/mypets");
         }
-    },[token]) /
+    },[token]) 
     
     
 

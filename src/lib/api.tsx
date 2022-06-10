@@ -54,15 +54,50 @@ export async function getPetsAround(lat:number, lng:number){
 }
 
 //my reported pets
-export async function myReportedPets(userId, token){
+export async function myReportedPets(token){
     try {
-        const pets = await fetch(API_BASE_URL+"/mypets/"+userId,{
+        const pets = await fetch(API_BASE_URL+"/mypets",{
             method: "GET",
             headers:{
-                "Authorization": `bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         return pets
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//me
+export async function me(token){
+    const autrhoized = await fetch(API_BASE_URL+"/me",{
+        method: "GET",
+            headers:{
+                "Authorization": `Bearer ${token}`
+            }
+    })
+    return autrhoized
+}
+
+//reportar una mascota
+
+export async function reportPet({token, petname, place, lat, lng, petImage}){
+    try {
+        const pet = await fetch(API_BASE_URL+"/pet",{
+            method: "POST",
+            headers:{
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                petname,
+                place,
+                lat,
+                lng,
+                petImage
+            })
+        })
+        return pet;
     } catch (error) {
         console.log(error);
     }

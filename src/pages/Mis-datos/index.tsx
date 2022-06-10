@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Title } from "Ui/Title";
+import { Title } from "Ui/titles/Title";
 import { SigninForm } from "components/SignInForm/SigninForm";
 import css from "./index.css"
 import { useToken, useUserData, useUserId } from "hooks";
-import { ButtonRosa } from "Ui/Button";
+import { ButtonRosa } from "Ui/buttons/Button";
 import { createUser } from "lib/api";
 
 

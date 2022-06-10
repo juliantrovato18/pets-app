@@ -1,6 +1,6 @@
 import React from "react";
-import { ButtonRosa } from "Ui/Button";
-import { InputComp } from "Ui/Input";
+import { ButtonRosa } from "Ui/buttons/Button";
+import { InputComp } from "Ui/inputs/Input";
 import css from "./signinForm.css";
 
 

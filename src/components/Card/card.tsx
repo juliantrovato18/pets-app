@@ -1,6 +1,6 @@
 import React from "react";
-import {Title} from "Ui/Title";
-import {SubTitle} from "Ui/Subtitle";
+import {Title} from "Ui/titles/Title";
+import {SubTitle} from "Ui/subtitle/Subtitle";
 import css from "./Card.css";
 
 

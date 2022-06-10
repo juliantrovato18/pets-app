@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams, useNavigate } from "react-router-dom";
 import  style from "./layout.css"
 
 
@@ -8,7 +8,8 @@ import  style from "./layout.css"
 
 function Layout(){
     const [activado, setActivado] = useState(false);
-  
+    const navigate = useNavigate();
+
     function handleClickBurger(){
         setActivado(!activado)
     }
@@ -23,8 +24,8 @@ function Layout(){
            </div>
            <ul style={{ display: activado? "flex" : "none" }} className={style.window}>
                <a className={style.link} href="">Mis Datos</a>
-               <a className={style.link} href="">Reportar Mascota</a>
-               <a className={style.link} href="">Mis Mascotas reportadas</a>
+               <a className={style.link} href="/report">Reportar Mascota</a>
+               <a className={style.link} href="/mypets">Mis Mascotas reportadas</a>
            </ul>
            </div>
         <Outlet />

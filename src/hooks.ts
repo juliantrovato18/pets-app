@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import {useRecoilState, useRecoilValue} from "recoil";
-import {userData, tokenAtom, userId} from "./atoms"
+import {userData, tokenAtom, userId, imageDrop, petAtom} from "./atoms"
 
 export function useUserData():any
 {
@@ -25,4 +25,14 @@ export function useToken():any
 
 export function useTokenValue():any{
   return useRecoilValue(tokenAtom);
+}
+
+export function useImage():any{
+  const [image, setImage] = useRecoilState(imageDrop);
+  return [image, setImage]
+}
+
+export function usePetData(): any{
+  const [petData, setPetData] = useRecoilState(petAtom);
+  return [petData, setPetData]
 }

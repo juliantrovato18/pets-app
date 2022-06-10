@@ -8,5 +8,6 @@ export function ButtonComp(props){
 }
 
 export function ButtonRosa(props){
-    return <button onClick={props.handleClick} className={css.pink}>{props.children} </button>
+    
+    return <button onClick={props.onClick} className={css.pink}>{props.children} </button>
 }

@@ -1,37 +1,53 @@
 import React, {useEffect, useState} from "react";
-import { useTokenValue, useUserIdValue } from "hooks";
-import { Title } from "Ui/Title";
+import { useTokenValue } from "hooks";
+import { Card } from "components/Card/card";
+import { Title } from "Ui/titles/Title";
+import css from "./index.css"
 import { myReportedPets } from "lib/api";
 import { useNavigate } from "react-router-dom";
+import * as _ from "lodash";
+import { SubTitle } from "Ui/subtitle/Subtitle";
 
 export function ReportedPetsPage(){
     const token = useTokenValue();
-    const id = useUserIdValue();
     const navigate = useNavigate();
-    const [myPets, setMyPets] = useState([]);
-    console.log(id);
+    const [myPets, setMyPets] = useState([{}]);
     console.log(token);
-    const userId = id.userId;
-    const userToken = JSON.stringify(token.token);
+    const userToken = token.token;
     console.log(userToken);
+    
+
 
 
     useEffect(()=>{
-        if(token && id){
-            myReportedPets(userId,userToken).then((res)=>{
+        if(token){
+            myReportedPets(userToken).then((res)=>{
                 res.json().then((data)=>{
+                    console.log(data);
                     setMyPets(data)
-                    console.log(myPets);
+                    
                 })
             })
         }else{
             navigate("/signin");
         }
-    },[token, id])
+    },[])
+    console.log(myPets);
 
-    return (
-        <div>
-            <Title children="Mis mascotas reportadas" />
+    return myPets? (
+        <div className={css.page}>
+            <Title  children="Mis mascotas reportadas" />
+            <div className={css.cardContainer}>
+                {_.map(myPets,(p)=>{
+                    return(<Card key={p.id} img={p.petImage} place={p.place} name={p.petname} />)
+                })}
+            </div>
+        </div>
+    ):
+    (
+        <div className={css.page}>
+            <Title children="Mis mascotas reportados" />
+            <SubTitle children="Aun no reportaste a ninguna mascota" />
         </div>
     )
 }

@@ -3,4 +3,7 @@
 .title{
     font-family: 'Poppins', sans-serif;
     font-weight: 700 bold;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
 }

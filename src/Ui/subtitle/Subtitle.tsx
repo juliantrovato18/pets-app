@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./title.css"
+import css from "./Subtitle.css"
 
 type title = {
     children:string

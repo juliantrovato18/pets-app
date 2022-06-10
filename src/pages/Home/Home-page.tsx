@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react";
-import { ButtonRosa } from "Ui/Button";
-import { SubTitle } from "Ui/Subtitle";
+import { ButtonRosa } from "Ui/buttons/Button";
+import { SubTitle } from "Ui/subtitle/Subtitle";
 import * as _ from "lodash"
 import { Card } from "components/Card/card";
 import { getPetsAround } from "lib/api";
-import { Title } from "Ui/Title";
+import { Title } from "Ui/titles/Title";
 import css from "./Home.css"
 
 export function HomePage(){
-    const [loc, setLoc] = useState({lat:"", lng:""});
+    const [loc, setLoc] = useState({lat:0, lng:0});
     const [pets, setPets] = useState(null);
     
     useEffect(()=>{

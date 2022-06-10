@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Title } from "Ui/Title";
+import { Title } from "Ui/titles/Title";
 import css from "./index.css";
 import { verifyMail } from "lib/api";
 import { useParams, useNavigate } from "react-router-dom";

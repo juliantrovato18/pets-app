@@ -19,10 +19,16 @@ export const tokenAtom = atom({
     default: {userId: ''}  // default value (aka initial value)
     
   });
+
+  export const imageDrop = atom({
+    key: 'imageDrop', // unique ID (with respect to other atoms/selectors)
+    default: null // default value (aka initial value)
+    
+  });
   
 
   export const petAtom = atom({
     key: 'petAtom', // unique ID (with respect to other atoms/selectors)
-    default: {petName:"", petUbi:"", lat:0, lng:0, image:""}, // default value (aka initial value)
+    default: {petname:"", place:"", lat:0, lng:0, petImage:""}, // default value (aka initial value)
     
   });
