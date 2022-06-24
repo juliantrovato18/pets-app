@@ -1,0 +1,13 @@
+.containsButtons{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.page{
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

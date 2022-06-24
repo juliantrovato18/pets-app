@@ -5,13 +5,17 @@ import { MyDropzone } from "Ui/drop-img";
 import { Mapbox } from "Ui/Map/Map";
 import  {reportPet}  from "../../lib/api"
 import { InputComp } from "Ui/inputs/Input";
+import { InputPet } from "Ui/Input-pet/Input2";
 import { usePetData, useTokenValue } from "hooks";
 import { ButtonRosa } from "Ui/buttons/Button";
+import { SubTitle } from "Ui/subtitle/Subtitle";
+import css from "./index.css";
 
 export function ReportPet(){
     const navigate = useNavigate()
     const [pet, setPet] = usePetData();
     const token = useTokenValue();
+    const tokens = token.token;
     console.log(token, "de report");
 
     // useEffect(() => {
@@ -20,34 +24,50 @@ export function ReportPet(){
     //     }
     //   }, []);
 
-    function handleChange(e){
-        const name = e.target.value;
-        console.log(name);
-        setPet({...pet, petName:name})
-    }
-    async function reportPetHandler(){
-        const petReport = reportPet({
-            token,
+    // const handleChange =(e) => {
+    //     const petname = e.target.value;
+    //     setPet({...pet, petname:e.target.value});
+        
+    //   };
+    //   console.log(pet, "el que vale");
+
+
+
+    async function reportPetHandler(e){
+        e.preventDefault();
+        const petReport ={
             petname: pet.petname,
             lat: pet.lat,
             lng: pet.lng,
             petImage: pet.petImage,
-            place: pet.petUbi
-        })
+            place: pet.place,
+            token:tokens,
+        }
+        console.log(petReport, "cuando entra a la func");
+        try {
+            const petR = await reportPet(petReport)
+            setPet(petR);
+            console.log(pet, "ms");
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
+    
 
     return(
-        <div className="page">
+        <div className={css.page}>
             <Title children="Reportar mascota perdida" />
             <div>
-                <label>
-                    <span>Nombre de la mascota</span>
-                    <input onChange={handleChange} type="name" name="pet" />
-                </label>
+                <SubTitle children="Agrega la foto de tu mascota" />
                 <MyDropzone />
+                <label className={css.label}>
+                    <span>Nombre de la mascota</span>
+                    <InputPet/>
+                </label>
                 <Mapbox />
             </div>
-                <ButtonRosa onClick={reportPetHandler} children={"reportar como perdida"} />
+            <ButtonRosa onClick={reportPetHandler} children={"reportar como perdida"} />
         </div>
     )
 }

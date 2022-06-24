@@ -2,5 +2,6 @@
 
 .title{
     font-family: 'Poppins', sans-serif;
-    font-weight: 700 bold;
+    font-weight: 500 bold;
+    max-height: 100px;
 }

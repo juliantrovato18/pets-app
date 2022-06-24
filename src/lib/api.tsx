@@ -103,3 +103,41 @@ export async function reportPet({token, petname, place, lat, lng, petImage}){
     }
 }
 
+//edita una mascota ya reportada
+export async function editPet({token, id, petname, place, lat, lng, petImage}){
+    try {
+        const petEdited = await fetch(API_BASE_URL+"/pets/"+id,{
+            method: "PATCH",
+            headers:{
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                petname,
+                place,
+                lat,
+                lng,
+                petImage
+            })
+        })
+        return petEdited;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//borra una mascota de la base de datos
+export async function deletePet({token, id}){
+    try {
+        const deleteReport = await fetch(API_BASE_URL+"/delete-report/"+id,{
+            method: "DELETE",
+            headers:{
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        })
+        return deleteReport;
+    } catch (error) {
+        console.log(error);
+    }
+}

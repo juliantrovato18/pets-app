@@ -2,13 +2,13 @@ import React, {useState, useEffect} from "react";
 import { ButtonRosa } from "Ui/buttons/Button";
 import { SubTitle } from "Ui/subtitle/Subtitle";
 import * as _ from "lodash"
-import { Card } from "components/Card/card";
+import { WelcomeCard } from "components/Welcome-Card/Welcome-Card";
 import { getPetsAround } from "lib/api";
 import { Title } from "Ui/titles/Title";
 import css from "./Home.css"
 
 export function HomePage(){
-    const [loc, setLoc] = useState({lat:0, lng:0});
+    const [loc, setLoc] = useState({lat:null, lng:null});
     const [pets, setPets] = useState(null);
     
     useEffect(()=>{
@@ -37,7 +37,7 @@ export function HomePage(){
             <Title  children="Mascotas perdidas cerca tuyo" />
             <div className={css.petsContainer}>
                 {_.map(pets,(c)=>{
-                    return (<Card key={c.objectID} img={c.petImage} place={c.place} name={c.petname} />
+                    return (<WelcomeCard id={c.objectID} img={c.petImage} place={c.place} name={c.petname} />
                     )
                 })}
             </div>
@@ -48,7 +48,7 @@ export function HomePage(){
         <div  className={css.home}>
             <Title  children="Mascotas perdidas cerca tuyo" />
             <SubTitle children="Para ver las mascotas reportadas cerca tuyo necesitamos permiso para conocer tu ubicación." />
-            <ButtonRosa handleClick={location} children="Dar mi ubicacion" />
+            <ButtonRosa onClick={location} children="Dar mi ubicacion" />
         </div>
     )
 }

@@ -37,7 +37,7 @@ export function PassPage(){
                 
             })
         })
-    },[email])
+    },[mail])
     console.log(user);
     const userMail = user.userEmail;
 

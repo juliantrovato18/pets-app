@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useCallback} from "react";
 import { useDropzone } from "react-dropzone";
 import { useImage, usePetData } from "hooks";
+import css from "./index.css"
 
 
 
@@ -16,7 +17,8 @@ export function MyDropzone(props) {
         reader.onload = (e)=>{
           const result = e.target.result;
             setImage(result)
-            setPet({...pet, image:result});
+            console.log(pet,"im");
+            setPet({...pet, petImage:result});
         }
         reader.readAsDataURL(file);
     });
@@ -33,7 +35,7 @@ export function MyDropzone(props) {
             <img src={image} />
           </div> :
           <div>
-            <img src="../../../img/uploader.png"  />
+            <img className={css.dropzone} src="../../../img/uploader.png"  />
           </div>
       }
     </div>

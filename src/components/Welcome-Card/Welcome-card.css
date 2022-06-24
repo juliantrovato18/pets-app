@@ -1,0 +1,29 @@
+.cardContainer{
+    width: 325px;
+    height: 230px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.img{
+    padding: 10px;
+    max-width: 60px;
+    max-height: 30px;
+}
+.subtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.title{
+    padding: 10px;
+}
+.reportsheet{
+    width: 310px;
+    height: 600px;
+    padding: 10px;
+    flex-direction: column;
+
+}

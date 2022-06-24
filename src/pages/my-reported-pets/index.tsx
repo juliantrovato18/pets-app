@@ -39,7 +39,8 @@ export function ReportedPetsPage(){
             <Title  children="Mis mascotas reportadas" />
             <div className={css.cardContainer}>
                 {_.map(myPets,(p)=>{
-                    return(<Card key={p.id} img={p.petImage} place={p.place} name={p.petname} />)
+                    console.log(p);
+                    return(<Card id={p.id} img={p.petImage} place={p.place} name={p.petname} />)
                 })}
             </div>
         </div>

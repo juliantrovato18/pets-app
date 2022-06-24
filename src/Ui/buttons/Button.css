@@ -12,10 +12,11 @@
 .pink{
     background-color: #FF9DF5;
     min-Width: 300px;
-    Height: 50px;
+    Height: 30px;
     border-radius: 4px;
     font-weight: bold;
     font-family: "poppins";
+    margin-top: 120px;
 }
 .gray{
     background-color: #CDCDCD;

@@ -47,7 +47,7 @@ export function Mapbox(){
           setLat(latitud);
           setLng(longitud);
           console.log(place, latitud, longitud);
-          setPetData({...petData, lat:latitud, lng:longitud, petUbi:place})
+          setPetData({...petData, lat:latitud, lng:longitud, place:place})
     }
     
         
@@ -65,12 +65,12 @@ export function Mapbox(){
                     Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
                 </div>
             </div>
-            <div>
-                <label>
+            <div className={css.spects}>
+                <label className={css.label}>
                     <span>Ubicacion</span>
                     <input onChange={handleChange}  name="name" type="string" />
                 </label>
-                <button onClick={searchPet}>Buscar</button>
+                <button type="button" onClick={searchPet}>Buscar</button>
                 <SubTitle children="Buscá un punto de referencia para reportar a tu mascota. Puede ser una dirección, un barrio o una ciudad." />
             </div>
         </div>

@@ -1,8 +1,15 @@
 .map{
-    height: 160px;
+    height: 130px;
     max-width: 360px;
 }
 .container{
-    height: 260px;
+    max-height: 150px;
     max-width: 360px;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+}
+.spects{
+    max-height: 100px;
 }
