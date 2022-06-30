@@ -18,11 +18,11 @@ export function ReportPet(){
     const tokens = token.token;
     console.log(token, "de report");
 
-    // useEffect(() => {
-    //     if (!token) {
-    //       navigate("/signin");
-    //     }
-    //   }, []);
+    useEffect(() => {
+        if (!token) {
+          navigate("/signin");
+        }
+      }, []);
 
     // const handleChange =(e) => {
     //     const petname = e.target.value;

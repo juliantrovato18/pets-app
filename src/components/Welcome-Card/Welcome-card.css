@@ -21,9 +21,27 @@
     padding: 10px;
 }
 .reportsheet{
-    width: 310px;
-    height: 600px;
-    padding: 10px;
+    width: 330px;
+    height: 500px;
+    padding: 20px;
+    display: flex;
     flex-direction: column;
-
+    position: absolute;
+    top: 70px;
+    left: 28px;
+    background-color: gray;
+    border: solid 2px black;
+}
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.close{
+    display: flex;
+    justify-content: flex-end;
+    background-color: gray;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }

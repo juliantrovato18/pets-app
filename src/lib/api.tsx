@@ -1,5 +1,5 @@
-//const API_BASE_URL = "https://desafio-7.herokuapp.com";
- const API_BASE_URL = "http://localhost:3003";
+const API_BASE_URL = "https://desafio-7.herokuapp.com";
+ //const API_BASE_URL = "http://localhost:3003";
 
 //Crea el auth, signup
 export async function createUser(name:string, email:any, password:string){
@@ -137,6 +137,27 @@ export async function deletePet({token, id}){
             }
         })
         return deleteReport;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//crea un reporte de que vieron a la mascota
+export async function createReport({token, id, name, phone, text}){
+    try {
+        const report = await fetch(API_BASE_URL+"/report-founded/"+id,{
+            method: "POST",
+            headers:{
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                name,
+                phone,
+                text
+            })
+        })
+        return report;
     } catch (error) {
         console.log(error);
     }
