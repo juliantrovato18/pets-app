@@ -22,7 +22,7 @@
     background-color: #8AF1FF;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     top: 60px;
@@ -37,8 +37,9 @@
     font-family:"poppins";
     font-weight: 700 bold;
     width: 200px;
-    height: 150px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    height: 110px;
 }
 @media(min-width:700px){
     .link{
@@ -56,4 +57,10 @@
     .nav{
         display: none;
     }
+}
+.bur{
+    width: 52px;
+    height: 6px;
+    background-color: black;
+    margin-top:6px;
 }

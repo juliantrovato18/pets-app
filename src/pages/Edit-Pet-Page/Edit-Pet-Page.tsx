@@ -60,7 +60,7 @@ export const EditPetPage = ()=>{
             </div>
             <div className={css.containsButtons}>
                 <ButtonRosa onClick={editPetHandler} children={"guardar"} />
-                <button onClick={deletePetHandler}>Despublicar</button>
+                <button className={css.despublicar} onClick={deletePetHandler}>Despublicar</button>
             </div>
         </div>
     )

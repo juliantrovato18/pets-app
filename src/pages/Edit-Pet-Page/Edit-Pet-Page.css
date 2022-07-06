@@ -11,3 +11,9 @@
     justify-content: center;
     align-items: center;
 }
+.despublicar{
+    margin-top: 10px;
+    min-width: 105px;
+    height: 30px;
+    border-radius: 2px;
+}

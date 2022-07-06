@@ -45,7 +45,7 @@ export function HomePage(){
         
     ):
     (
-        <div  className={css.home}>
+        <div className={css.home}>
             <Title  children="Mascotas perdidas cerca tuyo" />
             <SubTitle children="Para ver las mascotas reportadas cerca tuyo necesitamos permiso para conocer tu ubicación." />
             <ButtonRosa onClick={location} children="Dar mi ubicacion" />
