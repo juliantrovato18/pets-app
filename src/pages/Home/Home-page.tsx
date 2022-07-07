@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { ButtonRosa } from "Ui/buttons/Button";
 import { SubTitle } from "Ui/subtitle/Subtitle";
 import * as _ from "lodash"
+import Swal from "sweetalert2";
 import { WelcomeCard } from "components/Welcome-Card/Welcome-Card";
 import { getPetsAround } from "lib/api";
 import { Title } from "Ui/titles/Title";
@@ -18,12 +19,17 @@ export function HomePage(){
     },[loc])
 
     const getPets = async ()=>{
+        
         const petsAround = await (await (await getPetsAround(loc.lat, loc.lng)).json())
         setPets(petsAround);
     }
     console.log(pets);
 
     const location = async ()=>{
+        Swal.fire({
+            title:"esperando que cargue tu direccion",
+            icon:"info"
+        })
         navigator.geolocation.getCurrentPosition(async (geo) => {
             const { latitude, longitude } = geo.coords;
             setLoc({ lat: latitude, lng: longitude });

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Title } from "Ui/titles/Title";
 import { SubTitle } from "Ui/subtitle/Subtitle";
 import { MyDropzone } from "Ui/drop-img";
+import Swal from "sweetalert2";
 import { InputPet } from "Ui/Input-pet/Input2";
 import css from "./Edit-Pet-Page.css";
 import { Mapbox } from "Ui/Map/Map";
@@ -32,11 +33,19 @@ export const EditPetPage = ()=>{
         petImage:pet.petImage
     } 
     try {
+        Swal.fire({
+            title:"Mascota editada con exito",
+            icon:"success"
+        })
         const petR = await editPet(petEditada)
         setPet(petR);
         console.log(pet, "ms");
         navigate("/mypets");
         } catch (error) {
+            Swal.fire({
+                title:"Tu mascota no fue editada",
+                icon:"error"
+            })
         console.log(error);
         }
     }

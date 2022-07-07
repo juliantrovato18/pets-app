@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useToken, useUserData, useUserId } from "hooks";
+import Swal from "sweetalert2";
 import {verifyMail, signIn} from "../../lib/api"
 import { ButtonRosa } from "Ui/buttons/Button";
 import { InputComp } from "Ui/inputs/Input";
@@ -18,6 +19,11 @@ export function PassPage(){
 
     useEffect(()=>{
         if(token){
+            Swal.fire({
+                title:"success",
+                text:"todo salio bien",
+                icon:"success"
+            })
             navigate("/mypets");
         }
     },[token]) 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Title } from "Ui/titles/Title";
 import { MyDropzone } from "Ui/drop-img";
 import { Mapbox } from "Ui/Map/Map";
+import Swal from "sweetalert2";
 import  {reportPet}  from "../../lib/api"
 import { InputComp } from "Ui/inputs/Input";
 import { InputPet } from "Ui/Input-pet/Input2";
@@ -45,10 +46,18 @@ export function ReportPet(){
         }
         console.log(petReport, "cuando entra a la func");
         try {
+            Swal.fire({
+                title:"mascota reportada con exito",
+                icon:"success"
+            })
             const petR = await reportPet(petReport)
             setPet(petR);
             console.log(pet, "ms");
         } catch (error) {
+            Swal.fire({
+                title:"algo salio mal",
+                icon:"error"
+            })
             console.log(error);
         }
         
