@@ -1,6 +1,7 @@
 import React from "react";
 import {Title} from "Ui/titles/Title";
 import { useNavigate } from "react-router-dom";
+import { TitlePetCard } from "Ui/Title-Pet-Card/Title-Pet-Card";
 import {SubTitle} from "Ui/subtitle/Subtitle";
 import css from "./Card.css";
 
@@ -25,7 +26,7 @@ function Card({img, name, place, id}) {
         <div className={css.cardContainer} key={id}>
             <img className={css.image} src={img} alt="" />
             <div className={css.title}>
-                <Title children={name}/>
+                <TitlePetCard children={name}/>
             </div>
             <div className={css.subtitle}>
                 <SubTitle children={place} />

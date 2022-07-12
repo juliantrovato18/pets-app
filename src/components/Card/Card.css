@@ -7,14 +7,13 @@
     margin-top: 15px;
 }
 .image2{
-    width: 43px;
+    max-width: 43px;
     height: 43px;
     padding: 10px;
 }
 .image{
-    padding: 10px;
-    max-width: 90px;
-    min-width: 100px;
+    max-width: 320px;
+    max-height: 120px;
 }
 .subtitle{
     display: flex;

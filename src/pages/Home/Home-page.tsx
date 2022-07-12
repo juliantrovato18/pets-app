@@ -43,7 +43,7 @@ export function HomePage(){
             <Title  children="Mascotas perdidas cerca tuyo" />
             <div className={css.petsContainer}>
                 {_.map(pets,(c)=>{
-                    return (<WelcomeCard id={c.objectID} img={c.petImage} place={c.place} name={c.petname} />
+                    return (<WelcomeCard key={c.objectID} id={c.objectID} img={c.petImage} place={c.place} name={c.petname} />
                     )
                 })}
             </div>

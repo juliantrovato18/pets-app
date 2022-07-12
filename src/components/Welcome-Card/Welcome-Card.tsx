@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Title} from "Ui/titles/Title";
+import { TitlePetCard } from "Ui/Title-Pet-Card/Title-Pet-Card";
 import { useTokenValue } from "hooks";
 import { useNavigate } from "react-router-dom";
 import {SubTitle} from "Ui/subtitle/Subtitle";
@@ -72,9 +73,9 @@ function WelcomeCard({img, name, place, id}) {
                         </form>
                     </div>
             </div>
-            <img style={{maxWidth: "70px", maxHeight:"60px"}} src={img} alt="" />
+            <img style={{maxWidth: "320px", maxHeight:"120px"}} src={img} alt="" />
             <div className={css.title}>
-                <Title children={name}/>
+                <TitlePetCard children={name}/>
             </div>
             <div className={css.subtitle}>
                 <SubTitle children={place} />
