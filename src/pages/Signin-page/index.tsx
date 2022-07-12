@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Title } from "Ui/titles/Title";
 import css from "./index.css";
 import { verifyMail } from "lib/api";
+import { useUserData } from "hooks";
 import { useParams, useNavigate } from "react-router-dom";
 import { SigninForm } from "components/SignInForm/SigninForm";
 import { LoginForm } from "components/Login-Form/Login-Form";
@@ -10,6 +11,7 @@ import { LoginForm } from "components/Login-Form/Login-Form";
 
 export function SigninPage(){
     const navigate = useNavigate();
+    const [user, setUser] = useUserData();
     const [verify, setVerify] = useState(false);
 
     
@@ -17,6 +19,8 @@ export function SigninPage(){
     async function submitHandler(e){
         e.preventDefault();
         const mail = e.target.email.value;
+        setUser({userEmail:mail});
+        console.log(user, "signin");
         navigate(mail);
         // if(verify){
         //     console.log(verify);

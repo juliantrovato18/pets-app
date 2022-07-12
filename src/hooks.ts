@@ -26,6 +26,9 @@ export function useToken():any
 export function useTokenValue():any{
   return useRecoilValue(tokenAtom);
 }
+export function useEmailValue():any{
+  return useRecoilValue(userData);
+}
 
 export function useImage():any{
   const [image, setImage] = useRecoilState(imageDrop);

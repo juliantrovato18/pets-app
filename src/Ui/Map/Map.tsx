@@ -8,7 +8,7 @@ import { ButtonRosa } from "Ui/buttons/Button";
 
 export const mapboxToken = "pk.eyJ1Ijoia2VhbmVkZXYiLCJhIjoiY2wzeXliMHBkMGVtcjNicDBsaGc1OGJ6NiJ9.1Db1Gwvjb0eViHzNQbTKMg";
 mapboxgl.accessToken = mapboxToken;
-console.log(mapboxToken, mapboxgl.accessToken);
+
 
 export function Mapbox(){
     const mapContainer = useRef(null);

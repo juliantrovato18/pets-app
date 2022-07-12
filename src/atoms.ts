@@ -17,8 +17,8 @@ export const tokenAtom = atom({
 
  export const userData = atom({
     key: 'userData', // unique ID (with respect to other atoms/selectors)
-    default: {userEmail: ''}  // default value (aka initial value)
-    
+    default: {userEmail: ''},  // default value (aka initial value)
+    effects_UNSTABLE: [persistAtom],
   });
 
 

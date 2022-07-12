@@ -22,6 +22,7 @@
     background-color: #8AF1FF;
     display: none;
     flex-direction: column;
+    z-index: 3;
     justify-content: flex-start;
     align-items: center;
     position: fixed;
@@ -63,4 +64,7 @@
     height: 6px;
     background-color: black;
     margin-top:6px;
+}
+.p{
+    margin-top: -7px;
 }

@@ -12,9 +12,7 @@ export function ReportedPetsPage(){
     const token = useTokenValue();
     const navigate = useNavigate();
     const [myPets, setMyPets] = useState([{}]);
-    console.log(token);
     const userToken = token.token;
-    console.log(userToken);
     
 
 
