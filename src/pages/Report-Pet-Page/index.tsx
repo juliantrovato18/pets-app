@@ -52,6 +52,7 @@ export function ReportPet(){
             })
             const petR = await reportPet(petReport)
             setPet(petR);
+            navigate("/mypets");
             console.log(pet, "ms");
         } catch (error) {
             Swal.fire({
