@@ -12,7 +12,6 @@ export async function createUser(name:string, email:any, password:string){
         body:JSON.stringify(userData)
         
     })
-    await user.json();
     return user
 }
 
@@ -26,7 +25,7 @@ export async function signIn(email:string, password:string){
         },
         body:JSON.stringify(data)
     })
-    await auth.json();
+
     return auth
 }
 //se fija que el mail exista en la base de datos.
@@ -41,7 +40,6 @@ export async function verifyMail(email:any){
             body:JSON.stringify({email})
         })
         console.log(exist);
-        await exist.json();
         return exist
     } catch (error) {
         console.log(error)
@@ -53,7 +51,6 @@ export async function getPetsAround(lat:number, lng:number){
     const pets = await fetch(API_BASE_URL+"/mascotas-cerca?lat=" +lat +"&lng="+lng,{
         method:"GET"
     })
-    await pets.json();
     return pets
 }
 
@@ -66,7 +63,6 @@ export async function myReportedPets(token){
                 "Authorization": `Bearer ${token}`
             }
         })
-        await pets.json();
         return pets
     } catch (error) {
         console.log(error);
@@ -81,7 +77,6 @@ export async function me(token){
                 "Authorization": `Bearer ${token}`
             }
     })
-    await autrhoized.json();
     return autrhoized
 }
 
@@ -103,7 +98,6 @@ export async function reportPet({token, petname, place, lat, lng, petImage}){
                 petImage
             })
         })
-        await pet.json();
         return pet;
     } catch (error) {
         console.log(error);
@@ -127,7 +121,6 @@ export async function editPet({token, id, petname, place, lat, lng, petImage}){
                 petImage
             })
         })
-        await petEdited.json();
         return petEdited;
     } catch (error) {
         console.log(error);
@@ -144,7 +137,6 @@ export async function deletePet({token, id}){
                 "Content-Type": "application/json",
             }
         })
-        await deleteReport.json();
         return deleteReport;
     } catch (error) {
         console.log(error);
@@ -166,7 +158,6 @@ export async function createReport({token, id, name, phone, text}){
                 text
             })
         })
-        await report.json();
         return report;
     } catch (error) {
         console.log(error);
