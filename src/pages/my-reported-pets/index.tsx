@@ -13,6 +13,7 @@ export function ReportedPetsPage(){
     const navigate = useNavigate();
     const [myPets, setMyPets] = useState([{}]);
     const userToken = token.token;
+    console.log(userToken, "hay token?");
     
 
 
@@ -21,9 +22,8 @@ export function ReportedPetsPage(){
         if(token){
             myReportedPets(userToken).then((res)=>{
                 res.json().then((data)=>{
-                    console.log(data);
                     setMyPets(data)
-                    
+                    console.log(data);
                 })
             })
         }else{
