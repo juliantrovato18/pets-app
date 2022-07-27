@@ -17,3 +17,8 @@
     height: 30px;
     border-radius: 2px;
 }
+.label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
