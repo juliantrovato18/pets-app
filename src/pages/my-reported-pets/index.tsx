@@ -21,10 +21,8 @@ export function ReportedPetsPage(){
     useEffect(()=>{
         if(token){
             myReportedPets(userToken).then((res)=>{
-                res.json().then((data)=>{
-                    setMyPets(data)
-                    console.log(data);
-                })
+                    setMyPets(res);
+                    console.log(res);
             })
         }else{
             navigate("/signin");
