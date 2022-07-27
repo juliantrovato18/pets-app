@@ -56,18 +56,16 @@ export async function getPetsAround(lat:number, lng:number){
 
 //my reported pets
 export async function myReportedPets(token){
-    try {
-        const pets = await fetch(API_BASE_URL+"/mypets",{
-            method: "GET",
-            headers:{
-                "Authorization": `Bearer ${token}`
-            }
+    return await (
+        await fetch(API_BASE_URL+"/mypets", {
+          method: "GET",
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
         })
-        return pets
-    } catch (error) {
-        console.log(error);
+      ).json();
     }
-}
+
 
 //me
 export async function me(token){
