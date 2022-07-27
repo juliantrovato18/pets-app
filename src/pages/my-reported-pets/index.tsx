@@ -22,7 +22,7 @@ export function ReportedPetsPage(){
         if(token){
             myReportedPets(userToken).then((res)=>{
                     setMyPets(res);
-                    console.log(res);
+                    console.log(res, "las reees");
             })
         }else{
             navigate("/signin");
@@ -36,7 +36,7 @@ export function ReportedPetsPage(){
             <div className={css.cardContainer}>
                 {_.map(myPets,(p)=>{
                     console.log(p);
-                    return(<Card id={p.id} img={p.petImage} place={p.place} name={p.petname} />)
+                    return(<Card key={p.id} id={p.id} img={p.petImage} place={p.place} name={p.petname} />)
                 })}
             </div>
         </div>
