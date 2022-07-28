@@ -13,7 +13,7 @@ export function HomePage(){
     const [pets, setPets] = useState(null);
     
     useEffect(()=>{
-        if(loc){
+        if(loc.lat && loc.lng){
             getPets()
         }
     },[loc])
