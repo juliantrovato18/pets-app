@@ -14,9 +14,6 @@ export function ReportedPetsPage(){
     const [myPets, setMyPets] = useState([{}]);
     const userToken = token.token;
     console.log(userToken, "hay token?");
-    
-
-
 
     useEffect(()=>{
         if(token){
@@ -30,7 +27,13 @@ export function ReportedPetsPage(){
     },[])
     console.log(myPets);
 
-    return myPets? (
+    return myPets.length == 0?     (
+        <div className={css.page}>
+            <Title children="Mis mascotas reportadas" />
+            <SubTitle children="Aun no reportaste a ninguna mascota" />
+        </div>
+    ):
+    (
         <div className={css.page}>
             <Title  children="Mis mascotas reportadas" />
             <div className={css.cardContainer}>
@@ -40,11 +43,6 @@ export function ReportedPetsPage(){
                 })}
             </div>
         </div>
-    ):
-    (
-        <div className={css.page}>
-            <Title children="Mis mascotas reportados" />
-            <SubTitle children="Aun no reportaste a ninguna mascota" />
-        </div>
     )
+
 }

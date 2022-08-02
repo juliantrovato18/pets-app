@@ -71,11 +71,13 @@ export function ReportPet(){
             <div>
                 <SubTitle children="Agrega la foto de tu mascota" />
                 <MyDropzone />
+                <br />
                 <label className={css.label}>
                     <span>Nombre de la mascota</span>
                     <InputPet/>
                 </label>
                 <Mapbox />
+                <br />
             </div>
             <ButtonRosa onClick={reportPetHandler} children={"reportar como perdida"} />
         </div>

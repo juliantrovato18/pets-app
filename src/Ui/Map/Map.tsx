@@ -71,6 +71,7 @@ export function Mapbox(){
                     <input onChange={handleChange}  name="name" type="string" />
                 </label>
                 <button type="button" onClick={searchPet}>Buscar</button>
+                <br />
                 <SubTitle children="Buscá un punto de referencia para reportar a tu mascota. Puede ser una dirección, un barrio o una ciudad." />
             </div>
         </div>
