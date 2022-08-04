@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .root{
-    min-width: 320px;
+    max-width: 1320px;
     height: 60px;
     display: flex;
     flex-direction: row;

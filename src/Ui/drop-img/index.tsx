@@ -32,7 +32,7 @@ export function MyDropzone(props) {
       {
         image ?
           <div>
-            <img src={image} />
+            <img className={css.img} src={image} />
           </div> :
           <div>
             <img className={css.dropzone} src="../../../img/uploader.png"  />
