@@ -67,6 +67,24 @@ export async function myReportedPets(token){
     }
 
 
+//actualiza los datos de un usuario ya existente
+export async function updateUserData({token, name, password}){
+    const newUser = await fetch(API_BASE_URL+"/update",{
+        method:"PUT",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":`bearer ${token}`
+            },
+            body:JSON.stringify({
+                name,
+                password
+            })
+    })
+    const data = await newUser.json();
+    return data;
+}
+
+
 //me
 export async function me(token){
     const autrhoized = await fetch(API_BASE_URL+"/me",{

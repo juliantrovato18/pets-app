@@ -5,7 +5,7 @@ import { SigninForm } from "components/SignInForm/SigninForm";
 import css from "./index.css"
 import { useToken, useUserData, useUserId } from "hooks";
 import { ButtonRosa } from "Ui/buttons/Button";
-import { createUser } from "lib/api";
+import { createUser, updateUserData } from "lib/api";
 
 
 export function MisDatos(){
@@ -16,6 +16,7 @@ export function MisDatos(){
     const navigate = useNavigate();
     const email = useParams();
     const mail = email.email;
+    const sinParams = Object.entries(email).length != 0;
     
 
     const atrapaSubmit = async(e)=>{
@@ -23,6 +24,7 @@ export function MisDatos(){
         const name = e.target.name.value;
         const password = e.target.password.value;
         const pass2 = e.target.password2.value;
+        const checkPass = password === pass2;
         
         if(password === pass2){
             console.log("entra al crear");
@@ -33,10 +35,16 @@ export function MisDatos(){
                     console.log(id);
                     navigate("/signin")
                 })
-               
+            })
+        }else if(checkPass && sinParams){
+            updateUserData({token, name, password}).then((res)=>{
+                res.json().then((data)=>{
+                    console.log(data);
+                    navigate("/mypets")
+                })
             })
         }else{
-            console.log("algo salio mal");
+            navigate("/");
         }
        
     }
