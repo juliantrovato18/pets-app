@@ -40,7 +40,7 @@ export function MisDatos(){
             updateUserData({token, name, password}).then((res)=>{
                 res.json().then((data)=>{
                     console.log(data);
-                    navigate("/mypets")
+                    navigate("/signin")
                 })
             })
         }else{
